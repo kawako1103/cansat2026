@@ -13,3 +13,6 @@ def phase2():
 
     robot.move(0.5, 6)
     robot.stop()
+    
+if __name__ == "__main__":
+    phase2()

@@ -23,7 +23,9 @@ import phase4 as phase4
 # goal_pos = [139.514296921, 35.461619311]
 # goal_pos = [130.90121416666668, 30.415220833333333]#deg? aozora_park@tanegashima
 # goal_pos = [130.960085000, 30.374149666]#deg? contest
-goal_pos = [130.9879500, 30.730806500]#deg? center of minato park
+# goal_pos = [130.9879500, 30.730806500]#deg? center of minato park
+
+goal_pos = [139.86152611280582, 35.77073529951685]# 地球窯
 # 130.9602166666666 30.374381499999995
     
 

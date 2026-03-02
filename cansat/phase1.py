@@ -30,7 +30,7 @@ def phase1():
     alt_upth = alt0 + 1.0
     alt_lowth = alt0 + 0.4
 
-    acc0 = 15
+    acc0 = 17
     counter = 0
     stop_time = 100
 
