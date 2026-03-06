@@ -55,6 +55,8 @@ class Camera:
     def stop_camera(self):
         if self.picam2:
             self.picam2.stop()
+            self.picam2.close()
+            self.picam2 = None
             print("Camera Stopped.")
 
 if __name__ == "__main__":

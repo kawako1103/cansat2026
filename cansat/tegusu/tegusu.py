@@ -19,7 +19,7 @@ def cutWire():
 
     try:
         i = 0
-        while i < 5:
+        while i < 3:
 
             # GPIO.output(21, GPIO.HIGH)
             GPIO.output(26, GPIO.LOW)

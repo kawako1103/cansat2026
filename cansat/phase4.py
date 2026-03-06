@@ -275,7 +275,7 @@ def phase4():
                 # 進まない/計測に異常が続く場合は再探索へ戻す
                 if no_progress_streak >= NO_PROGRESS_LIMIT:
                     log_message("Fail-safe: no progress -> back to search spin")
-                    robot.turn(40)
+                    robot.turn(10)
                     time.sleep(SEARCH_TURN_SEC)
                     robot.stop()
                     no_progress_streak = 0
@@ -283,7 +283,7 @@ def phase4():
             # 連続未検出が続いたら探索に戻る（方向に関係なく）
             if no_detection_streak >= NO_DETECTION_LIMIT and direction != "none_cone":
                 log_message("Fail-safe: forcing search spin after long no-detection")
-                robot.turn(40)
+                robot.turn(10)
                 time.sleep(SEARCH_TURN_SEC)
                 robot.stop()
                 no_detection_streak = 0
@@ -302,6 +302,7 @@ def phase4():
         try:
             if camera:
                 camera.stop_camera()
+                del camera
         except Exception:
             pass
         try:

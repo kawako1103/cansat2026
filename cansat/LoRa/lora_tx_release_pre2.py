@@ -11,7 +11,7 @@ class LoRaTransmitter:
         """
         Initialize the LoRaTransmitter with the specified UART port, baudrate, reset pin, GPS log file path, and log file path.
         """
-        self.ser = serial.Serial(port=port, baudrate=baudrate, timeout=None)
+        self.ser = serial.Serial(port=port, baudrate=baudrate, timeout=0.1)
         self.reset_pin = reset_pin
         self.file_path = file_path
         self.log_file_path = log_file_path
@@ -23,7 +23,8 @@ class LoRaTransmitter:
         Set up the GPIO pin for resetting the LoRa module.
         """
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)
+        #GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.reset_pin, GPIO.OUT)
 
     def reset(self):
@@ -138,8 +139,10 @@ if __name__ == "__main__":
     # Parameters for the LoRa transmitter
     PORT = "/dev/ttyAMA0"
     BAUDRATE = 115200
-    RESET_PIN = 22
-    FILE_PATH = "/home/cansat-stu/cansat2024/Op-test_i2c/log_gps.txt"
+    #RESET_PIN = 22
+    RESET_PIN = 25
+    #FILE_PATH = "/home/cansat-stu/cansat2024/Op-test_i2c/log_gps.txt"
+    FILE_PATH = "/home/cansat-stu/cansat/phase3_log.txt"
     LOG_FILE_PATH = "/home/cansat-stu/cansat2024/Op-test_i2c/sent_data_log.txt"  # Path for saving sent data
 
     # Create a LoRaTransmitter object and initialize it

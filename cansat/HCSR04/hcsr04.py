@@ -7,6 +7,7 @@ import numpy as np
 TRIG_PIN = 20
 ECHO_PIN = 16
 
+
 # グローバル変数としてセンサーを保持
 sensor = None
 

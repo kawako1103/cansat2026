@@ -88,7 +88,7 @@ def move(target_speed, mtime, speed=0.2, step=0.02, left_bias = 0.00,right_bias=
         speed += step
         mtime -= step
 
-        left_speed = min(speed + left_bias, MAX_DUTY)
+        left_speed = min(speed + left_bias, MAX_DUTY)*1.015
         right_speed = min(speed + right_bias, MAX_DUTY)
 
         set_left_motor(left_speed)
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     result = move(0.75, 3)
     print("Move result:", result)  
     time.sleep(1)  # 少し待ってから旋回
-    
+"""    
     result = turn(-90.0) # 左90度旋回
     print("Turn result:", result)  
     time.sleep(1)  # 少し待ってから次の旋回
@@ -135,3 +135,4 @@ if __name__ == "__main__":
     result = turn(90.0) # 右90度旋回
     print("Turn result:", result)  
     stop()
+"""
